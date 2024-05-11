@@ -2,23 +2,23 @@ import { Connection, PublicKey } from "@solana/web3.js"
 import { generateLogEntry } from "./lib/generateLogEntry"
 
 const main = async () => {
-    // Set up an RPC Connection
+    // * Set up an RPC Connection
     const connection = new Connection('https://api.mainnet-beta.solana.com', { commitment: 'confirmed' })
 
-    // Get pee.sol Public Key
-    const peeSolAddress = "7grEJpUaWyNnXj4ZZherbv59Zc94SgD6T2b6S8YtXALB"
-    const peeSolPublicKey = new PublicKey(peeSolAddress)
+    // * Get address/publicKey
+    const address = ""
+    const publicKey = new PublicKey(address)
 
     /**
-     ** Get signatures by Public Key address (max of 1,000 transaction signatrues per request; may require iterating/looping)
+     * * Get signatures by Public Key address (max of 1,000 transaction signatrues per request; may require iterating/looping)
      * @dev https://solana-labs.github.io/solana-web3.js/classes/Connection.html#getSignaturesForAddress
      */
     
-    let signatures = await connection.getSignaturesForAddress(peeSolPublicKey)
+    let signatures = await connection.getSignaturesForAddress(publicKey)
     console.log(signatures)
 
     /**
-     ** Get multiple transactions' details by signature (max of 10 transaction details per request; may require iterating/looping through signatures)
+     * * Get multiple transactions' details by signature (max of 10 transaction details per request; may require iterating/looping through signatures)
      * @dev https://solana-labs.github.io/solana-web3.js/classes/Connection.html#getParsedTransactions
      * @dev https://solana-labs.github.io/solana-web3.js/classes/Connection.html#getTransactions 
      */
@@ -34,7 +34,7 @@ const main = async () => {
     // )
 
     /**
-     ** Get a single transaction's details by signature
+     * * Get a single transaction's details by signature
      * @dev https://solana-labs.github.io/solana-web3.js/classes/Connection.html#getParsedTransaction
      * @dev https://solana-labs.github.io/solana-web3.js/classes/Connection.html#getTransaction 
      */
