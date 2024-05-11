@@ -1,0 +1,19 @@
+{
+  "name": "rpc-query",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Lacuna Strategies LLC",
+  "license": "MIT",
+  "scripts": {
+    "query": "tsx index.ts"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.91.8",
+    "@types/node": "^20.12.11",
+    "bs58": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "eslint": "^9.2.0",
+    "jsbi": "^4.3.0",
+    "tsx": "^4.9.4"
+  }
+}
